@@ -26,3 +26,29 @@ or equal to 1000 (excluding doubles)
 '''
 print(sum(x))
 print(len(x))
+
+
+
+class Number:
+    def __init__(self, value):
+        self.__value = value
+        
+    def get_value(self):
+        return self.__value
+    
+    def set_value(self, new_value):
+        self.__value = new_value
+    
+    def is_divisible_by_k(self, k):
+        return self.__value % k == 0
+    
+    
+
+x = []
+for i in range(1000):
+    num = Number(i)
+    if num.is_divisible_by_k(2) | num.is_divisible_by_k(5) | num.is_divisible_by_k(7):
+        x.append(i)
+        
+print(sum(x))
+print(len(x))
